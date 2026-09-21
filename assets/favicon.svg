@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Background Obsidian (Clean high contrast against Windows dark taskbar) -->
+    <linearGradient id="smallBgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E201C" />
+      <stop offset="100%" stop-color="#121311" />
+    </linearGradient>
+  </defs>
+
+  <!-- Full-Bleed Squircle (96% footprint, crisp high-contrast perimeter border) -->
+  <rect x="14" y="14" width="484" height="484" rx="114" fill="url(#smallBgGrad)" stroke="#4A4E46" stroke-width="14" />
+
+  <!-- Bold PrioNudge A1 Glyph (Optically tuned for 16px to 48px micro-readability) -->
+  <g id="prioNudgeSmall">
+    <!-- Lower Base Priority Tier (Grounded Backlog) -->
+    <rect x="110" y="284" width="230" height="84" rx="42" fill="#D97757" />
+
+    <!-- Upper Nudged Priority Tier (Displaced forward, solid vibrant amber) -->
+    <path d="M 180 144 L 348 144 L 416 186 L 348 228 L 180 228 A 42 42 0 0 1 180 144 Z" fill="#EA9A3E" />
+  </g>
+</svg>
