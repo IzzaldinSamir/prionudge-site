@@ -8,9 +8,10 @@
 
   var RELEASES_REPO = "https://github.com/IzzaldinSamir/prionudge-releases";
   var LATEST_API = "https://api.github.com/repos/IzzaldinSamir/prionudge-releases/releases/latest";
-  var FALLBACK_VERSION = "0.1.7";
+  var FALLBACK_VERSION = "0.1.9";
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var finePointer = window.matchMedia("(pointer: fine)").matches;
 
   /* ---------------------------------------------------------
      1. Nav backdrop once the page has scrolled
@@ -56,8 +57,123 @@
   }
 
   /* ---------------------------------------------------------
-     3. Resolve the latest release so the download links keep
-        working after v0.1.7. Falls back to the pinned URLs.
+     3. Sticky mobile CTA
+        Show once the hero is scrolled past, hide when the
+        final CTA is visible.
+     --------------------------------------------------------- */
+  var sticky = document.getElementById("sticky-cta");
+  var hero = document.getElementById("top");
+  var finalCta = document.getElementById("cta-final");
+  if (sticky && hero && finalCta && "IntersectionObserver" in window) {
+    sticky.removeAttribute("hidden");
+
+    var setSticky = function (show) {
+      sticky.classList.toggle("is-visible", show);
+      document.body.classList.toggle("sticky-cta-active", show);
+    };
+
+    var heroObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          // hide when hero is visible, show otherwise
+          setSticky(!entry.isIntersecting);
+        });
+      },
+      { rootMargin: "0px", threshold: 0.05 }
+    );
+
+    var ctaObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) setSticky(false);
+        });
+      },
+      { rootMargin: "0px", threshold: 0.25 }
+    );
+
+    heroObserver.observe(hero);
+    ctaObserver.observe(finalCta);
+  }
+
+  /* ---------------------------------------------------------
+     4. Subtle hero parallax + cursor lighting
+        Only on fine-pointer devices and when reduced motion
+        is not requested.
+     --------------------------------------------------------- */
+  var heroSection = document.querySelector(".hero");
+  var shotFrame = document.querySelector(".shot__frame");
+  if (heroSection && shotFrame && finePointer && !reduceMotion) {
+    heroSection.classList.add("hero--parallax");
+
+    var bounds = heroSection.getBoundingClientRect();
+    var targetX = 0;
+    var targetY = 0;
+    var currentX = 0;
+    var currentY = 0;
+    var raf = null;
+    var isActive = true;
+
+    var updateBounds = function () {
+      bounds = heroSection.getBoundingClientRect();
+    };
+
+    var apply = function () {
+      currentX += (targetX - currentX) * 0.12;
+      currentY += (targetY - currentY) * 0.12;
+
+      // tiny tilt: max 1.5deg
+      var rx = currentY * -1.5;
+      var ry = currentX * 1.5;
+      shotFrame.style.setProperty("--rx", rx.toFixed(3) + "deg");
+      shotFrame.style.setProperty("--ry", ry.toFixed(3) + "deg");
+
+      // cursor glow position relative to frame
+      var px = ((currentX + 1) / 2) * bounds.width;
+      var py = ((currentY + 1) / 2) * bounds.height;
+      shotFrame.style.setProperty("--px", px.toFixed(1));
+      shotFrame.style.setProperty("--py", py.toFixed(1));
+
+      if (Math.abs(targetX - currentX) > 0.001 || Math.abs(targetY - currentY) > 0.001) {
+        raf = window.requestAnimationFrame(apply);
+      } else {
+        raf = null;
+      }
+    };
+
+    var onMove = function (event) {
+      if (!isActive) return;
+      updateBounds();
+      var x = (event.clientX - bounds.left) / bounds.width;
+      var y = (event.clientY - bounds.top) / bounds.height;
+      targetX = Math.max(-1, Math.min(1, x * 2 - 1));
+      targetY = Math.max(-1, Math.min(1, y * 2 - 1));
+      if (!raf) raf = window.requestAnimationFrame(apply);
+    };
+
+    var onLeave = function () {
+      targetX = 0;
+      targetY = 0;
+      if (!raf) raf = window.requestAnimationFrame(apply);
+    };
+
+    // pause when not visible to avoid wasted work
+    var visObserver = new IntersectionObserver(
+      function (entries) {
+        isActive = entries[0].isIntersecting;
+        if (!isActive) onLeave();
+      },
+      { threshold: 0.05 }
+    );
+    visObserver.observe(heroSection);
+
+    window.addEventListener("resize", updateBounds, { passive: true });
+    heroSection.addEventListener("mousemove", onMove, { passive: true });
+    heroSection.addEventListener("mouseleave", onLeave, { passive: true });
+  }
+
+  /* ---------------------------------------------------------
+     5. Resolve the latest release so the download links keep
+        working after v0.1.9. Falls back to the pinned URLs.
      --------------------------------------------------------- */
   function setDownload(kind, url) {
     if (!url) return;
@@ -105,7 +221,7 @@
         setVersion((release.tag_name || "").replace(/^v/i, "") || FALLBACK_VERSION);
       })
       .catch(function () {
-        /* Offline, rate-limited or blocked: the pinned v0.1.7 URLs stand. */
+        /* Offline, rate-limited or blocked: the pinned v0.1.9 URLs stand. */
       })
       .then(function () { window.clearTimeout(timer); });
   }
