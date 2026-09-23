@@ -54,7 +54,7 @@ After deploying, update the placeholder domain in `index.html`:
 
 ## Download links
 
-The buttons ship with pinned `v0.1.7` asset URLs so they work with JavaScript
+The buttons ship with pinned `v0.1.11` asset URLs so they work with JavaScript
 disabled. On load, `script.js` asks the GitHub API for the latest release in
 `IzzaldinSamir/prionudge-releases`, finds the asset ending in `_x64-setup.exe`
 and the matching `.msi`, and rewrites the links and the on-page version label.

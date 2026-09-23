@@ -790,7 +790,8 @@ p { text-wrap: pretty; }
   grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-template-areas:
     "local local update keyboard"
-    "tray tray tray tray";
+    "tray tray tray tray"
+    "remind remind remind remind";
   gap: 16px;
 }
 
@@ -820,6 +821,7 @@ p { text-wrap: pretty; }
 .bento__card:nth-child(2) { grid-area: update; }
 .bento__card:nth-child(3) { grid-area: keyboard; }
 .bento__card:nth-child(4) { grid-area: tray; }
+.bento__card:nth-child(5) { grid-area: remind; }
 
 .bento__icon {
   display: grid;
@@ -989,7 +991,7 @@ p { text-wrap: pretty; }
   .feature__media { order: -1; }
   .feature__callout { right: 14px; bottom: 14px; font-size: 0.72rem; }
 
-  .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-areas: "local local" "update keyboard" "tray tray"; }
+  .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-areas: "local local" "update keyboard" "tray tray" "remind remind"; }
 }
 
 @media (max-width: 860px) {
@@ -1029,7 +1031,7 @@ p { text-wrap: pretty; }
   .capture-demo__input { font-size: 0.72rem; }
   .capture-demo__bar { padding: 8px 10px; }
 
-  .bento { grid-template-columns: 1fr; grid-template-areas: "local" "update" "keyboard" "tray"; }
+  .bento { grid-template-columns: 1fr; grid-template-areas: "local" "update" "keyboard" "tray" "remind"; }
 
   .footer__inner { flex-direction: column; align-items: flex-start; }
 
