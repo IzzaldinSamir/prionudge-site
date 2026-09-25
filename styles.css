@@ -37,8 +37,8 @@
   --ink:           #1B1004;
 
   /* metrics */
-  --container:     1240px;
-  --gutter:        clamp(18px, 4.2vw, 44px);
+  --container:     1180px;
+  --gutter:        clamp(18px, 4.6vw, 40px);
   --radius:        16px;
   --radius-sm:     12px;
   --radius-xs:     8px;
@@ -122,7 +122,7 @@ p { text-wrap: pretty; }
 }
 
 .section {
-  padding-block: clamp(54px, 6.8vw, 96px);
+  padding-block: clamp(72px, 9.5vw, 132px);
   position: relative;
 }
 
@@ -131,8 +131,8 @@ p { text-wrap: pretty; }
   flex-wrap: wrap;
   align-items: end;
   justify-content: space-between;
-  gap: 16px 36px;
-  margin-bottom: clamp(32px, 4vw, 52px);
+  gap: 18px 40px;
+  margin-bottom: clamp(40px, 5.4vw, 64px);
 }
 .section__head--center {
   flex-direction: column;
@@ -549,22 +549,22 @@ p { text-wrap: pretty; }
    ========================================================= */
 .section--features {
   background: linear-gradient(180deg, rgba(255,255,255,0.01) 0%, transparent 12%, transparent 88%, rgba(255,255,255,0.01));
-  padding-bottom: 0;
 }
 
 .feature {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.42fr);
-  gap: clamp(32px, 4.5vw, 64px);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+  gap: clamp(28px, 5vw, 72px);
   align-items: center;
-  padding-block: clamp(38px, 4.5vw, 60px);
+  padding-block: clamp(54px, 7vw, 92px);
 }
-.feature:first-of-type { padding-top: 0; }
-.feature:not(:last-of-type) { border-bottom: 1px solid var(--line); }
+.section--features .feature:first-of-type { padding-top: 0; }
+.section--features .feature:not(:last-of-type) { border-bottom: 1px solid var(--line); }
+.section--features .feature:last-of-type { padding-bottom: 0; }
 .feature--reverse { direction: rtl; }
 .feature--reverse > * { direction: ltr; }
 
-.feature__copy { max-width: 48ch; }
+.feature__copy { max-width: 46ch; }
 .feature__kicker {
   display: inline-flex;
   align-items: center;
@@ -786,27 +786,18 @@ p { text-wrap: pretty; }
 /* =========================================================
    RECURRING TASKS
    ========================================================= */
-.section--recurring {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-.feature--recurring {
-  border-top: 1px solid var(--line);
-}
-
 .hero__release-tag {
   color: var(--amber-soft);
   font-weight: 500;
 }
 
 .feature--recurring .feature__frame {
-  padding: clamp(24px, 3.2vw, 38px);
-  padding-bottom: clamp(44px, 5.5vw, 64px);
+  padding: clamp(22px, 3.2vw, 34px);
+  padding-bottom: clamp(48px, 6vw, 64px);
   background:
     radial-gradient(ellipse at 85% 15%, rgba(234, 154, 62, 0.08) 0%, transparent 60%),
     linear-gradient(180deg, #131512 0%, #0C0D0B 100%);
-  min-height: 410px;
+  min-height: 380px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -815,7 +806,7 @@ p { text-wrap: pretty; }
 .recurrence-demo {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
   width: 100%;
 }
 
@@ -825,7 +816,7 @@ p { text-wrap: pretty; }
   align-items: center;
   justify-content: space-between;
   gap: 8px 12px;
-  padding-bottom: 16px;
+  padding-bottom: 14px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -838,28 +829,28 @@ p { text-wrap: pretty; }
 .recurrence-demo__icon {
   display: grid;
   place-items: center;
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   border-radius: var(--radius-xs);
   background: rgba(234, 154, 62, 0.1);
   border: 1px solid var(--line-warm);
   color: var(--amber);
 }
 .recurrence-demo__icon svg {
-  width: 15px;
-  height: 15px;
+  width: 14px;
+  height: 14px;
   fill: currentColor;
 }
 
 .recurrence-demo__heading {
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--text);
 }
 
 .recurrence-demo__status {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   color: var(--text-3);
   font-family: var(--mono);
 }
@@ -874,9 +865,9 @@ p { text-wrap: pretty; }
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 7px 16px;
+  padding: 6px 14px;
   border-radius: 999px;
-  font-size: 0.84rem;
+  font-size: 0.82rem;
   font-weight: 500;
   letter-spacing: -0.01em;
   background: rgba(255, 255, 255, 0.035);
@@ -905,7 +896,7 @@ p { text-wrap: pretty; }
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 16px 18px;
+  padding: 14px 16px;
   border-radius: var(--radius-sm);
   background: rgba(0, 0, 0, 0.35);
   border: 1px solid var(--line);
@@ -914,8 +905,8 @@ p { text-wrap: pretty; }
 .recurrence-demo__item {
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 12px 16px;
+  gap: 12px;
+  padding: 10px 14px;
   border-radius: var(--radius-xs);
   background: rgba(255, 255, 255, 0.025);
   border: 1px solid var(--line);
@@ -933,22 +924,22 @@ p { text-wrap: pretty; }
 .recurrence-demo__check {
   display: grid;
   place-items: center;
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   border-radius: 6px;
   background: rgba(234, 154, 62, 0.2);
   color: var(--amber);
   flex-shrink: 0;
 }
 .recurrence-demo__check svg {
-  width: 13px;
-  height: 13px;
+  width: 12px;
+  height: 12px;
   fill: currentColor;
 }
 
 .recurrence-demo__circle {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   border-radius: 6px;
   border: 1.5px solid rgba(234, 154, 62, 0.6);
   flex-shrink: 0;
@@ -957,13 +948,13 @@ p { text-wrap: pretty; }
 .recurrence-demo__meta {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 2px;
   flex: 1;
   min-width: 0;
 }
 
 .recurrence-demo__name {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 550;
   letter-spacing: -0.01em;
   color: var(--text);
@@ -979,15 +970,15 @@ p { text-wrap: pretty; }
 }
 
 .recurrence-demo__date {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   color: var(--text-3);
   font-family: var(--mono);
 }
 
 .recurrence-demo__badge,
 .recurrence-demo__tag {
-  font-size: 0.74rem;
-  padding: 4px 9px;
+  font-size: 0.72rem;
+  padding: 3px 8px;
   border-radius: 4px;
   white-space: nowrap;
   flex-shrink: 0;
@@ -1010,18 +1001,18 @@ p { text-wrap: pretty; }
   display: flex;
   align-items: center;
   gap: 10px;
-  padding-left: 28px;
+  padding-left: 24px;
   padding-block: 2px;
 }
 
 .recurrence-demo__line {
-  width: 18px;
+  width: 16px;
   height: 1px;
   background: var(--line-strong);
 }
 
 .recurrence-demo__renew-pill {
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   color: var(--text-3);
   font-family: var(--mono);
   letter-spacing: 0.02em;
@@ -1030,7 +1021,7 @@ p { text-wrap: pretty; }
 /* =========================================================
    NATIVE WINDOWS / BENTO
    ========================================================= */
-.section--tech { padding-top: clamp(48px, 5.5vw, 80px); }
+.section--tech { padding-top: clamp(64px, 8vw, 108px); }
 
 .bento {
   display: grid;
