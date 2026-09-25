@@ -38,10 +38,10 @@
   "name": "PrioNudge",
   "applicationCategory": "ProductivityApplication",
   "operatingSystem": "Windows",
-  "softwareVersion": "0.1.11",
+  "softwareVersion": "0.1.12",
   "description": "A focused, local-first Windows task manager built to reduce the friction of deciding what deserves your attention next.",
   "url": "https://prionudge.ezzulddin.com/",
-  "downloadUrl": "https://github.com/IzzaldinSamir/prionudge-releases/releases/latest/download/PrioNudge_0.1.11_x64-setup.exe",
+  "downloadUrl": "https://github.com/IzzaldinSamir/prionudge-releases/releases/latest/download/PrioNudge_0.1.12_x64-setup.exe",
   "author": {
     "@type": "Person",
     "name": "Izzaldin Samir",
@@ -68,7 +68,7 @@
     </a>
     <nav class="nav__links" aria-label="Primary">
       <a class="nav__link" href="https://github.com/IzzaldinSamir/prionudge-releases" target="_blank" rel="noopener">GitHub</a>
-      <a class="btn btn--primary btn--sm" href="https://github.com/IzzaldinSamir/prionudge-releases/releases/download/v0.1.11/PrioNudge_0.1.11_x64-setup.exe" data-dl="exe">Download</a>
+      <a class="btn btn--primary btn--sm" href="https://github.com/IzzaldinSamir/prionudge-releases/releases/download/v0.1.12/PrioNudge_0.1.12_x64-setup.exe" data-dl="exe">Download</a>
     </nav>
   </div>
 </header>
@@ -94,7 +94,7 @@
       </p>
 
       <div class="hero__actions" data-reveal>
-        <a class="btn btn--primary btn--lg" href="https://github.com/IzzaldinSamir/prionudge-releases/releases/download/v0.1.11/PrioNudge_0.1.11_x64-setup.exe" data-dl="exe">
+        <a class="btn btn--primary btn--lg" href="https://github.com/IzzaldinSamir/prionudge-releases/releases/download/v0.1.12/PrioNudge_0.1.12_x64-setup.exe" data-dl="exe">
           <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 5.5 10.2 4.4v6.9H3zM11.4 4.2 21 3v8.3h-9.6zM3 12.7h7.2v6.9L3 18.5zM11.4 12.7H21V21l-9.6-1.4z"/></svg>
           Download for Windows
         </a>
@@ -105,11 +105,11 @@
       </div>
 
       <p class="hero__note" data-reveal>
-        <span class="ver" data-version>v0.1.11</span>
+        <span class="ver"><span data-version>v0.1.12</span> <span class="hero__release-tag">· Recurring tasks</span></span>
         <span aria-hidden="true">·</span> Free download
         <span aria-hidden="true">·</span> Local-first
         <span aria-hidden="true">·</span> No account required
-        <span class="hero__msi"><span aria-hidden="true">·</span> <a href="https://github.com/IzzaldinSamir/prionudge-releases/releases/download/v0.1.11/PrioNudge_0.1.11_x64_en-US.msi" data-dl="msi">MSI installer</a></span>
+        <span class="hero__msi"><span aria-hidden="true">·</span> <a href="https://github.com/IzzaldinSamir/prionudge-releases/releases/download/v0.1.12/PrioNudge_0.1.12_x64_en-US.msi" data-dl="msi">MSI installer</a></span>
       </p>
     </div>
 
@@ -208,11 +208,11 @@
         <div class="feature__copy">
           <div class="feature__kicker">Quick Capture</div>
           <h3>Type it once. PrioNudge parses the rest.</h3>
-          <p>Press Ctrl+Alt+Space from anywhere on Windows. Dates, priorities and estimates are extracted so you can get back to work.</p>
+          <p>Press Ctrl+Alt+Space from anywhere on Windows. Dates, priorities, recurrence and estimates are extracted so you can get back to work.</p>
           <ul class="feature__list">
             <li>Global Ctrl+Alt+Space capture from anywhere on Windows</li>
             <li>Natural date, priority and duration parsing</li>
-            <li>No forms, no clicking through menus</li>
+            <li>Understands recurrence like &ldquo;every Monday&rdquo; or &ldquo;every month&rdquo;</li>
           </ul>
         </div>
         <figure class="feature__media">
@@ -265,6 +265,83 @@
             <span class="feature__focus-ring" aria-hidden="true"></span>
           </div>
           <figcaption class="feature__caption">Focus mode removes the surrounding interface so the task is the only thing left.</figcaption>
+        </figure>
+      </article>
+    </div>
+  </section>
+
+  <!-- ======================= RECURRING TASKS ======================= -->
+  <section class="section section--recurring" aria-labelledby="recurring-title">
+    <div class="container">
+      <article class="feature feature--recurring feature--reverse" data-reveal>
+        <div class="feature__copy">
+          <div class="feature__kicker" id="recurring-title">Recurring tasks</div>
+          <h3>Set it once. It comes back when it should.</h3>
+          <p>Daily routines, weekdays, weekly work and monthly tasks can recreate themselves as each occurrence is completed, while completed occurrences remain part of history.</p>
+          <ul class="feature__list">
+            <li>Daily, weekdays, weekly and monthly cadence options</li>
+            <li>Captures naturally with phrases like &ldquo;every Monday&rdquo; or &ldquo;every month&rdquo;</li>
+            <li>Completed occurrences stay in history while the next instance resets cleanly</li>
+          </ul>
+        </div>
+        <figure class="feature__media">
+          <div class="feature__frame feature__frame--recurrence" aria-label="Recurring task schedule preview">
+            <div class="recurrence-demo">
+              <div class="recurrence-demo__header">
+                <div class="recurrence-demo__title-group">
+                  <span class="recurrence-demo__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M17 1l4 4-4 4V6H7a4 4 0 0 0-4 4v1H1v-1a6 6 0 0 1 6-6h10V1zm-10 22l-4-4 4-4v3h10a4 4 0 0 0 4-4v-1h2v1a6 6 0 0 1-6 6H7v3z"/></svg>
+                  </span>
+                  <span class="recurrence-demo__heading">Recurrence schedule</span>
+                </div>
+                <span class="recurrence-demo__status">Auto-renews on completion</span>
+              </div>
+
+              <div class="recurrence-demo__chips" role="group" aria-label="Supported cadences">
+                <span class="recurrence-chip">Daily</span>
+                <span class="recurrence-chip">Weekdays</span>
+                <span class="recurrence-chip recurrence-chip--active">
+                  <span class="recurrence-chip__dot" aria-hidden="true"></span>
+                  Weekly
+                </span>
+                <span class="recurrence-chip">Monthly</span>
+              </div>
+
+              <div class="recurrence-demo__flow">
+                <div class="recurrence-demo__item recurrence-demo__item--completed">
+                  <div class="recurrence-demo__check" aria-hidden="true">
+                    <svg viewBox="0 0 16 16"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/></svg>
+                  </div>
+                  <div class="recurrence-demo__meta">
+                    <span class="recurrence-demo__name">Sprint planning &amp; backlog retro</span>
+                    <span class="recurrence-demo__date">Completed Mon, Sep 21 &middot; Logged in history</span>
+                  </div>
+                  <span class="recurrence-demo__badge">History</span>
+                </div>
+
+                <div class="recurrence-demo__connector" aria-hidden="true">
+                  <span class="recurrence-demo__line"></span>
+                  <span class="recurrence-demo__renew-pill">Occurrence completed &rarr; Rescheduled</span>
+                </div>
+
+                <div class="recurrence-demo__item recurrence-demo__item--active">
+                  <div class="recurrence-demo__circle" aria-hidden="true"></div>
+                  <div class="recurrence-demo__meta">
+                    <span class="recurrence-demo__name">Sprint planning &amp; backlog retro</span>
+                    <span class="recurrence-demo__date">Next occurrence &middot; Every Monday</span>
+                  </div>
+                  <span class="recurrence-demo__tag">Next</span>
+                </div>
+              </div>
+            </div>
+            <span class="feature__callout" aria-hidden="true">
+              <span class="feature__callout-dot"></span>
+              <span>Clean slate &middot; History intact</span>
+            </span>
+          </div>
+          <figcaption class="feature__caption">
+            Completing an occurrence creates the next one on schedule without losing past records.
+          </figcaption>
         </figure>
       </article>
     </div>
@@ -334,14 +411,14 @@
     <div class="container cta__inner">
       <h2 class="cta__title" id="cta-title" data-reveal>Spend less time deciding.<br><span class="grad">Start with PrioNudge.</span></h2>
       <div class="hero__actions hero__actions--center" data-reveal>
-        <a class="btn btn--primary btn--lg" href="https://github.com/IzzaldinSamir/prionudge-releases/releases/download/v0.1.11/PrioNudge_0.1.11_x64-setup.exe" data-dl="exe">
+        <a class="btn btn--primary btn--lg" href="https://github.com/IzzaldinSamir/prionudge-releases/releases/download/v0.1.12/PrioNudge_0.1.12_x64-setup.exe" data-dl="exe">
           <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 5.5 10.2 4.4v6.9H3zM11.4 4.2 21 3v8.3h-9.6zM3 12.7h7.2v6.9L3 18.5zM11.4 12.7H21V21l-9.6-1.4z"/></svg>
           Download for Windows
         </a>
         <a class="btn btn--ghost btn--lg" href="https://github.com/IzzaldinSamir/prionudge-releases" target="_blank" rel="noopener">GitHub</a>
       </div>
       <p class="hero__note hero__note--center" data-reveal>
-        <span class="ver" data-version>v0.1.11</span>
+        <span class="ver" data-version>v0.1.12</span>
         <span aria-hidden="true">·</span> Windows 10 &amp; 11
         <span aria-hidden="true">·</span> Free download
         <span aria-hidden="true">·</span> <a href="https://github.com/IzzaldinSamir/prionudge-releases/releases/latest" target="_blank" rel="noopener">All releases</a>
@@ -372,10 +449,10 @@
 
 <!-- Sticky mobile CTA -->
 <aside class="sticky-cta" id="sticky-cta" aria-label="Download PrioNudge" hidden>
-  <a class="sticky-cta__btn" href="https://github.com/IzzaldinSamir/prionudge-releases/releases/download/v0.1.11/PrioNudge_0.1.11_x64-setup.exe" data-dl="exe">
+  <a class="sticky-cta__btn" href="https://github.com/IzzaldinSamir/prionudge-releases/releases/download/v0.1.12/PrioNudge_0.1.12_x64-setup.exe" data-dl="exe">
     <svg class="sticky-cta__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 5.5 10.2 4.4v6.9H3zM11.4 4.2 21 3v8.3h-9.6zM3 12.7h7.2v6.9L3 18.5zM11.4 12.7H21V21l-9.6-1.4z"/></svg>
     <span>Download PrioNudge</span>
-    <span class="ver" data-version>v0.1.11</span>
+    <span class="ver" data-version>v0.1.12</span>
   </a>
 </aside>
 
