@@ -19,6 +19,7 @@ assets/
     geist-variable.woff2
   img/
     hero-today.webp     the main app screenshot (Today view)
+    detail-tracker.webp activity tracker with targets & history
     detail-optimize.webp
     detail-capture.webp
     detail-focus.webp
@@ -54,7 +55,7 @@ After deploying, update the placeholder domain in `index.html`:
 
 ## Download links
 
-The buttons ship with pinned `v0.1.12` asset URLs so they work with JavaScript
+The buttons ship with pinned `v0.1.14` asset URLs so they work with JavaScript
 disabled. On load, `script.js` asks the GitHub API for the latest release in
 `IzzaldinSamir/prionudge-releases`, finds the asset ending in `_x64-setup.exe`
 and the matching `.msi`, and rewrites the links and the on-page version label.
@@ -67,7 +68,7 @@ release is published.
 
 To change the version advertised as the fallback, update these places:
 
-- `index.html` — every `data-dl="exe"` / `data-dl="msi"` href, and the two
+- `index.html` — every `data-dl="exe"` / `data-dl="msi"` href, and the
   `<span data-version>` elements
 - `index.html` — `softwareVersion` in the JSON-LD block
 - `script.js` — `FALLBACK_VERSION`
