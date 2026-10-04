@@ -40,18 +40,27 @@ block the GitHub API request (the pinned download links still function).
 
 ## Deploying
 
-It is a static folder, so anything works. Easiest options:
+The production site is https://prionudge.com/. The existing Cloudflare Pages
+project **prionudge-site** is connected to `IzzaldinSamir/prionudge-site` and
+automatically deploys `main`, with no build command and the repository root as
+the output directory. Keep using this project for domain and site changes.
 
-- **Cloudflare Pages** — connect the repo, build command: *(none)*, output dir: `/`
-- **Netlify** — drag the folder onto the Netlify dashboard (or set publish dir to `.`)
-- **GitHub Pages** — push the folder to a repo, then Settings → Pages → deploy from branch root
-- **Vercel** — `vercel --prod` with framework preset "Other"
+`prionudge.com`, `www.prionudge.com`, and `prionudge.ezzulddin.com` are custom
+domains on the same project. Cloudflare Single Redirect rules match only
+`www.prionudge.com` (in the `prionudge.com` zone) and
+`prionudge.ezzulddin.com` (in the `ezzulddin.com` zone). Both return **301** to
+`concat("https://prionudge.com", http.request.uri.path)`, with **Preserve query
+string** enabled. Attach and verify the apex domain before enabling redirects;
+keep the old hostname attached. Do not create a second project or deployment.
 
-After deploying, update the placeholder domain in `index.html`:
+The canonical link, `og:url`, and SoftwareApplication JSON-LD `url` use
+`https://prionudge.com/`. Both social image URLs use
+`https://prionudge.com/assets/img/og.jpg`. The JSON-LD `downloadUrl` remains the
+GitHub release installer URL, and the author's personal URL stays unchanged.
 
-- `<link rel="canonical">`
-- `og:url`, `og:image`, `twitter:image`
-- the `url` / `downloadUrl` fields in the JSON-LD block
+Website DNS coexists with Cloudflare Email Routing for `support@prionudge.com`.
+Preserve the existing MX, SPF/TXT, DKIM records, destination address, and support
+routing rule when changing website domains. Do not use wildcard DNS changes.
 
 ## Download links
 
