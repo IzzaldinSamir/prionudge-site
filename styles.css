@@ -1331,24 +1331,6 @@ kbd {
   color: var(--text-3);
 }
 
-.early-access__status {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  margin-top: 10px;
-  font-size: 0.76rem;
-  font-family: var(--mono);
-  color: var(--text-3);
-}
-.early-access__status-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--amber);
-  box-shadow: 0 0 6px var(--amber);
-  animation: pulse-dot 2.4s ease-in-out infinite;
-}
-
 .early-access__body p {
   color: var(--text-2);
   font-size: clamp(0.95rem, 1.2vw, 1.02rem);
@@ -1662,7 +1644,7 @@ kbd {
   .btn:hover, .feature:hover .feature__frame, .bento__card:hover, .workflow-step:hover, .cta__mark:hover { transform: none !important; }
   .hero__frame, .shot__frame { transform: none !important; }
   .shot__cursor-glow { display: none !important; }
-  .hero__pricing-dot, .feature__callout-dot, .early-access__status-dot {
+  .hero__pricing-dot, .feature__callout-dot {
     animation: none !important;
   }
 }

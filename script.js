@@ -112,9 +112,19 @@
     var currentY = 0;
     var raf = null;
     var isActive = true;
+    var scrollScheduled = false;
 
     var updateBounds = function () {
       bounds = heroSection.getBoundingClientRect();
+    };
+
+    var onScroll = function () {
+      if (!isActive || scrollScheduled) return;
+      scrollScheduled = true;
+      window.requestAnimationFrame(function () {
+        scrollScheduled = false;
+        if (isActive) updateBounds();
+      });
     };
 
     var apply = function () {
@@ -163,14 +173,18 @@
     var visObserver = new IntersectionObserver(
       function (entries) {
         isActive = entries[0].isIntersecting;
-        if (!isActive) onLeave();
+        if (!isActive) {
+          onLeave();
+        } else {
+          updateBounds();
+        }
       },
       { threshold: 0.05 }
     );
     visObserver.observe(heroSection);
 
     window.addEventListener("resize", updateBounds, { passive: true });
-    window.addEventListener("scroll", updateBounds, { passive: true });
+    window.addEventListener("scroll", onScroll, { passive: true });
     heroSection.addEventListener("mouseenter", onEnter, { passive: true });
     heroSection.addEventListener("mousemove", onMove, { passive: true });
     heroSection.addEventListener("mouseleave", onLeave, { passive: true });
