@@ -10,6 +10,8 @@ dependencies, no backend, no analytics, no cookies.
 
 ```
 index.html          the whole page
+privacy.html        privacy policy
+terms.html          software terms of service
 styles.css          design system + layout
 script.js           nav backdrop, reveal-on-scroll, latest-release lookup
 robots.txt
@@ -62,9 +64,13 @@ Website DNS coexists with Cloudflare Email Routing for `support@prionudge.com`.
 Preserve the existing MX, SPF/TXT, DKIM records, destination address, and support
 routing rule when changing website domains. Do not use wildcard DNS changes.
 
+## Support
+
+Public support and privacy questions: `support@prionudge.com`.
+
 ## Download links
 
-The buttons ship with pinned `v0.1.14` asset URLs so they work with JavaScript
+The buttons ship with pinned `v0.1.16` asset URLs so they work with JavaScript
 disabled. On load, `script.js` asks the GitHub API for the latest release in
 `IzzaldinSamir/prionudge-releases`, finds the asset ending in `_x64-setup.exe`
 and the matching `.msi`, and rewrites the links and the on-page version label.
@@ -93,3 +99,8 @@ To change the version advertised as the fallback, update these places:
 - Screenshots are captured from the real application UI, not mocked up.
 - `geist-variable.woff2` is the font the desktop app itself uses; Geist is
   licensed under the SIL Open Font License 1.1.
+
+- A paid checkout flow via Creem is planned but not yet live on the site.
+  `pay.prionudge.com` is intentionally not configured by this repository; it
+  will be set up after the Creem store is switched to Live and custom checkout
+  domains become available.
