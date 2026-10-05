@@ -140,9 +140,12 @@
       }
     };
 
-    var onMove = function (event) {
-      if (!isActive) return;
+    var onEnter = function () {
       updateBounds();
+    };
+
+    var onMove = function (event) {
+      if (!isActive || !bounds.width) return;
       var x = (event.clientX - bounds.left) / bounds.width;
       var y = (event.clientY - bounds.top) / bounds.height;
       targetX = Math.max(-1, Math.min(1, x * 2 - 1));
@@ -167,6 +170,8 @@
     visObserver.observe(heroSection);
 
     window.addEventListener("resize", updateBounds, { passive: true });
+    window.addEventListener("scroll", updateBounds, { passive: true });
+    heroSection.addEventListener("mouseenter", onEnter, { passive: true });
     heroSection.addEventListener("mousemove", onMove, { passive: true });
     heroSection.addEventListener("mouseleave", onLeave, { passive: true });
   }
@@ -224,6 +229,42 @@
         /* Offline, rate-limited or blocked: the pinned v0.1.16 URLs stand. */
       })
       .then(function () { window.clearTimeout(timer); });
+  }
+
+  /* ---------------------------------------------------------
+     6. Workflow rail active indicator on scroll
+     --------------------------------------------------------- */
+  var workflowSteps = document.querySelectorAll(".workflow-step");
+  if (workflowSteps.length && "IntersectionObserver" in window && !reduceMotion) {
+    var stepMap = {};
+    workflowSteps.forEach(function (step) {
+      var href = step.getAttribute("href");
+      if (href && href.charAt(0) === "#") {
+        var id = href.slice(1);
+        var target = document.getElementById(id);
+        if (target) stepMap[id] = step;
+      }
+    });
+
+    var activeObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var activeStep = stepMap[entry.target.id];
+            if (activeStep) {
+              workflowSteps.forEach(function (s) { s.classList.remove("is-active"); });
+              activeStep.classList.add("is-active");
+            }
+          }
+        });
+      },
+      { rootMargin: "-25% 0px -55% 0px", threshold: 0 }
+    );
+
+    Object.keys(stepMap).forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) activeObserver.observe(el);
+    });
   }
 
   upgradeDownloadLinks();

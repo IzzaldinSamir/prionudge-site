@@ -99,13 +99,14 @@
         </a>
       </div>
 
-      <p class="hero__pricing" data-reveal>
+      <div class="hero__pricing" data-reveal>
         <span class="hero__pricing-offer">
+          <span class="hero__pricing-dot" aria-hidden="true"></span>
           <span class="hero__pricing-label">Founder Early Access</span>
           <span class="hero__pricing-price">&euro;14.99 <span>one-time</span></span>
         </span>
         <span class="hero__pricing-note">Current <span class="ver">v0.1.16</span> remains free to download while paid checkout is pending.</span>
-      </p>
+      </div>
 
       <p class="hero__note" data-reveal>
         <span class="ver"><span data-version>v0.1.16</span> <span class="hero__release-tag">· Activity tracker</span></span>
@@ -135,6 +136,8 @@
       </figure>
     </div>
   </section>
+
+  <div class="section-divider" aria-hidden="true"><span class="section-divider__glow"></span></div>
 
   <!-- ======================= WHY PRIONUDGE ======================= -->
   <section class="section section--why" aria-labelledby="why-title">
@@ -172,6 +175,8 @@
     </div>
   </section>
 
+  <div class="section-divider" aria-hidden="true"><span class="section-divider__glow"></span></div>
+
   <!-- ======================= PRODUCT STORY ======================= -->
   <section class="section section--features" aria-labelledby="features-title">
     <div class="container">
@@ -181,8 +186,49 @@
         <p class="section__lead">Not a hundred features. Just the parts that remove a decision.</p>
       </div>
 
+      <!-- Workflow rail: Capture -> Decide -> Do -> Track -->
+      <nav class="workflow-rail" data-reveal aria-label="Product workflow loop">
+        <a class="workflow-step" href="#capture">
+          <span class="workflow-step__num">01</span>
+          <div class="workflow-step__body">
+            <span class="workflow-step__name">Capture</span>
+            <span class="workflow-step__meta"><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Space</kbd></span>
+          </div>
+        </a>
+        <span class="workflow-rail__arrow" aria-hidden="true">
+          <svg viewBox="0 0 16 16"><path d="M6 3.5l4.5 4.5L6 12.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <a class="workflow-step" href="#optimize">
+          <span class="workflow-step__num">02</span>
+          <div class="workflow-step__body">
+            <span class="workflow-step__name">Decide</span>
+            <span class="workflow-step__meta">Optimizer triage</span>
+          </div>
+        </a>
+        <span class="workflow-rail__arrow" aria-hidden="true">
+          <svg viewBox="0 0 16 16"><path d="M6 3.5l4.5 4.5L6 12.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <a class="workflow-step" href="#focus">
+          <span class="workflow-step__num">03</span>
+          <div class="workflow-step__body">
+            <span class="workflow-step__name">Do</span>
+            <span class="workflow-step__meta">Full-screen timer</span>
+          </div>
+        </a>
+        <span class="workflow-rail__arrow" aria-hidden="true">
+          <svg viewBox="0 0 16 16"><path d="M6 3.5l4.5 4.5L6 12.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <a class="workflow-step" href="#tracker">
+          <span class="workflow-step__num">04</span>
+          <div class="workflow-step__body">
+            <span class="workflow-step__name">Track</span>
+            <span class="workflow-step__meta">Planned vs. actual</span>
+          </div>
+        </a>
+      </nav>
+
       <!-- Optimize -->
-      <article class="feature feature--optimize" data-reveal>
+      <article class="feature feature--optimize" id="optimize" data-reveal>
         <div class="feature__copy">
           <div class="feature__kicker">Dead-Time Optimizer</div>
           <h3>Optimize a spare window into a plan.</h3>
@@ -207,13 +253,13 @@
       </article>
 
       <!-- Quick Capture -->
-      <article class="feature feature--capture feature--reverse" data-reveal>
+      <article class="feature feature--capture feature--reverse" id="capture" data-reveal>
         <div class="feature__copy">
           <div class="feature__kicker">Quick Capture</div>
           <h3>Type it once. PrioNudge parses the rest.</h3>
-          <p>Press Ctrl+Alt+Space from anywhere on Windows. Dates, priorities, recurrence and estimates are extracted so you can get back to work.</p>
+          <p>Press <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Space</kbd> from anywhere on Windows. Dates, priorities, recurrence and estimates are extracted so you can get back to work.</p>
           <ul class="feature__list">
-            <li>Global Ctrl+Alt+Space capture from anywhere on Windows</li>
+            <li>Global <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Space</kbd> capture from anywhere on Windows</li>
             <li>Natural date, priority and duration parsing</li>
             <li>Understands recurrence like &ldquo;every Monday&rdquo; or &ldquo;every month&rdquo;</li>
           </ul>
@@ -250,7 +296,7 @@
       </article>
 
       <!-- Focus -->
-      <article class="feature feature--focus" data-reveal>
+      <article class="feature feature--focus" id="focus" data-reveal>
         <div class="feature__copy">
           <div class="feature__kicker">Focus mode</div>
           <h3>One task. One timer. Full screen.</h3>
@@ -272,7 +318,7 @@
       </article>
 
       <!-- Activity Tracker -->
-      <article class="feature feature--tracker feature--reverse" data-reveal>
+      <article class="feature feature--tracker feature--reverse" id="tracker" data-reveal>
         <div class="feature__copy">
           <div class="feature__kicker">Activity Tracker</div>
           <h3>Tasks tell you what you planned.<br>Tracker shows what you spent time on.</h3>
@@ -298,7 +344,7 @@
       </article>
 
       <!-- Recurring Tasks -->
-      <article class="feature feature--recurring" data-reveal>
+      <article class="feature feature--recurring" id="recurring" data-reveal>
         <div class="feature__copy">
           <div class="feature__kicker" id="recurring-title">Recurring tasks</div>
           <h3>Set it once. It comes back when it should.</h3>
@@ -372,6 +418,8 @@
     </div>
   </section>
 
+  <div class="section-divider" aria-hidden="true"><span class="section-divider__glow"></span></div>
+
   <!-- ======================= WINDOWS DESKTOP / LOCAL-FIRST ======================= -->
   <section class="section section--tech" aria-labelledby="tech-title">
     <div class="container">
@@ -427,6 +475,8 @@
     </div>
   </section>
 
+  <div class="section-divider" aria-hidden="true"><span class="section-divider__glow"></span></div>
+
   <!-- ======================= FOUNDER EARLY ACCESS ======================= -->
   <section class="section section--early-access" aria-labelledby="early-access-title">
     <div class="container">
@@ -434,14 +484,27 @@
         <div class="early-access__intro">
           <p class="section__eyebrow" id="early-access-title">Founder Early Access</p>
           <p class="early-access__price">&euro;14.99 <span>one-time</span></p>
+          <div class="early-access__status" aria-label="License release status">
+            <span class="early-access__status-dot" aria-hidden="true"></span>
+            <span>Store review in progress</span>
+          </div>
         </div>
         <div class="early-access__body">
           <p>PrioNudge is moving from a free public build to a paid Founder Early Access license &mdash; a one-time purchase with a perpetual license, up to three activations and no subscription.</p>
           <p>Checkout is not live yet while payment-provider approval is pending, so the current public <span class="ver">v0.1.16</span> build remains available to download. The upcoming licensed release includes a 14-day trial.</p>
+          <div class="early-access__pills" aria-label="Key license terms">
+            <span class="early-access__pill">Perpetual license</span>
+            <span class="early-access__pill">Up to 3 activations</span>
+            <span class="early-access__pill">14-day trial upcoming</span>
+            <span class="early-access__pill">No subscription</span>
+            <span class="early-access__pill">Current v0.1.16 free</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
+
+  <div class="section-divider" aria-hidden="true"><span class="section-divider__glow"></span></div>
 
   <!-- ======================= FINAL CTA ======================= -->
   <section class="section cta" id="cta-final" aria-labelledby="cta-title">
@@ -450,6 +513,9 @@
       <div class="cta__vignette"></div>
     </div>
     <div class="container cta__inner">
+      <div class="cta__mark" aria-hidden="true" data-reveal>
+        <svg viewBox="0 0 512 512" focusable="false"><use href="#pn-mark"/></svg>
+      </div>
       <h2 class="cta__title" id="cta-title" data-reveal>Spend less time deciding.<br><span class="grad">Start with PrioNudge.</span></h2>
       <div class="hero__actions hero__actions--center" data-reveal>
         <a class="btn btn--primary btn--lg" href="https://github.com/IzzaldinSamir/prionudge-releases/releases/download/v0.1.16/PrioNudge_0.1.16_x64-setup.exe" data-dl="exe">
