@@ -408,6 +408,46 @@ p { text-wrap: pretty; }
   font-variant-numeric: tabular-nums;
 }
 
+/* hero pricing / status line (above the fold) */
+.hero__pricing {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 14px;
+  color: var(--text-3);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+.hero__pricing-offer {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px;
+  border: 1px solid var(--line-warm);
+  border-radius: 999px;
+  background: rgba(234, 154, 62, 0.08);
+}
+.hero__pricing-label {
+  color: var(--text-2);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+.hero__pricing-price {
+  color: var(--text);
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.hero__pricing-price > span {
+  color: var(--text-3);
+  font-weight: 500;
+  font-size: 0.86em;
+}
+.hero__pricing-note { max-width: 46ch; }
+.hero__pricing-note .ver { color: var(--text-2); }
+
 /* ---------- app stage ---------- */
 .hero__stage {
   position: relative;
