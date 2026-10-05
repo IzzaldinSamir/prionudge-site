@@ -125,13 +125,13 @@
           <img
             src="assets/img/hero-today.webp"
             width="3200" height="2000"
-            alt="The PrioNudge desktop app Today view with custom window titlebar. The Now section holds two prioritized tasks — one marked Deep Work, one marked High priority — with Next, Inbox and Later sections below, and the task inspector open on the right showing recurrence schedule options and task attributes."
+            alt="The PrioNudge desktop app Today workspace. The Now section features the active priority task with subtask checklist progress, with Next, Inbox, and Later sections organized below. The task inspector on the right displays subtasks and contextual energy, location, and device attributes."
             fetchpriority="high" decoding="async">
           <span class="shot__sheen" aria-hidden="true"></span>
           <span class="shot__cursor-glow" aria-hidden="true"></span>
         </div>
         <figcaption class="shot__caption">
-          Today view — Now, Next, Inbox and Later stay separate states with custom Windows window controls and instant task inspector.
+          Today workspace — Now, Next, Later, and Completed stay cleanly separated with custom Windows window controls, today capacity gauge, and instant task inspector.
         </figcaption>
       </figure>
     </div>
@@ -212,7 +212,7 @@
           <span class="workflow-step__num">03</span>
           <div class="workflow-step__body">
             <span class="workflow-step__name">Do</span>
-            <span class="workflow-step__meta">Full-screen timer</span>
+            <span class="workflow-step__meta">Focus session</span>
           </div>
         </a>
         <span class="workflow-rail__arrow" aria-hidden="true">
@@ -242,13 +242,13 @@
         <figure class="feature__media">
           <div class="feature__frame">
             <img src="assets/img/detail-optimize.webp" width="2280" height="1568" loading="lazy" decoding="async"
-              alt="The Dead-Time Optimizer: choose an available time window, location, device and energy level, and PrioNudge ranks a single task into a startable plan.">
+              alt="The Dead-Time Optimizer modal: selecting an available 25-minute window with high energy, computer device, and work location ranks the best matching task into an executable plan.">
             <span class="feature__callout" aria-hidden="true">
               <span class="feature__callout-dot"></span>
               <span>Time + context = next step</span>
             </span>
           </div>
-          <figcaption class="feature__caption">Optimize uses what you already know about your situation.</figcaption>
+          <figcaption class="feature__caption">Optimize matches your current time, energy, and device to build a single actionable plan.</figcaption>
         </figure>
       </article>
 
@@ -265,33 +265,15 @@
           </ul>
         </div>
         <figure class="feature__media">
-          <div class="feature__frame feature__frame--demo">
+          <div class="feature__frame">
             <img src="assets/img/detail-capture.webp" width="2280" height="1568" loading="lazy" decoding="async"
-              alt="Quick Capture parsing a typed line into a task dated Friday with a 30 minute estimate and high priority.">
-            <div class="capture-demo" aria-hidden="true">
-              <div class="capture-demo__bar">
-                <span class="capture-demo__input">
-                  <span class="capture-demo__text">Apply IBM networking job Friday !high 30m</span>
-                  <span class="capture-demo__caret"></span>
-                </span>
-              </div>
-              <div class="capture-demo__chips">
-                <span class="capture-demo__chip capture-demo__chip--date">
-                  <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/></svg>
-                  Friday
-                </span>
-                <span class="capture-demo__chip capture-demo__chip--priority">
-                  <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg>
-                  High
-                </span>
-                <span class="capture-demo__chip capture-demo__chip--estimate">
-                  <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/></svg>
-                  30m
-                </span>
-              </div>
-            </div>
+              alt="Quick Capture popup parsing 'Review PR notes Friday 30m !high !now' into structured tokens for title, date, duration, priority, and section.">
+            <span class="feature__callout" aria-hidden="true">
+              <span class="feature__callout-dot"></span>
+              <span>Global shortcut · Instant parsing</span>
+            </span>
           </div>
-          <figcaption class="feature__caption">The parser turns a single line into structured task metadata.</figcaption>
+          <figcaption class="feature__caption">The parser turns a single line into structured task metadata without taking you out of your flow.</figcaption>
         </figure>
       </article>
 
@@ -299,7 +281,7 @@
       <article class="feature feature--focus" id="focus" data-reveal>
         <div class="feature__copy">
           <div class="feature__kicker">Focus mode</div>
-          <h3>One task. One timer. Full screen.</h3>
+          <h3>One task. One timer. Zero distractions.</h3>
           <p>Pick a duration, start the session and let everything else fade back. Focus mode keeps the current task in front of you until you&rsquo;re done.</p>
           <ul class="feature__list">
             <li>15, 25, 45 or 60 minute presets</li>
@@ -310,10 +292,10 @@
         <figure class="feature__media">
           <div class="feature__frame feature__frame--focus">
             <img src="assets/img/detail-focus.webp" width="2280" height="1568" loading="lazy" decoding="async"
-              alt="Focus mode: a full-screen single-task timer with pause and complete controls and 15 to 60 minute presets.">
+              alt="Focus mode: a focused single-task workspace with countdown timer, 15 to 60 minute presets, pause, complete, and ambient soundscape controls.">
             <span class="feature__focus-ring" aria-hidden="true"></span>
           </div>
-          <figcaption class="feature__caption">Focus mode removes the surrounding interface so the task is the only thing left.</figcaption>
+          <figcaption class="feature__caption">Focus mode keeps the current task and timer front and center while background work fades away.</figcaption>
         </figure>
       </article>
 
@@ -333,13 +315,13 @@
         <figure class="feature__media">
           <div class="feature__frame feature__frame--tracker">
             <img src="assets/img/detail-tracker.webp" width="2280" height="1568" loading="lazy" decoding="async"
-              alt="The PrioNudge Activity Tracker showing the summary strip (Tracked today, Targets met, Target time left, Last 7 days), saved activities with progress bars and target-met badges, and the session history panel.">
+              alt="The PrioNudge Activity Tracker showing the summary strip (Tracked today, Targets met, Target time left, Last 7 days chart), saved activities with target goals, and the chronological session history panel.">
             <span class="feature__callout" aria-hidden="true">
               <span class="feature__callout-dot"></span>
               <span>Planned vs. actual time</span>
             </span>
           </div>
-          <figcaption class="feature__caption">Contained desktop workspace with independent scrolling for activities and session history.</figcaption>
+          <figcaption class="feature__caption">Activity Tracker combines daily targets, 7-day velocity, and live stopwatches alongside your task list.</figcaption>
         </figure>
       </article>
 
@@ -536,10 +518,10 @@
       <span class="mark mark--sm" aria-hidden="true">
         <svg viewBox="0 0 512 512" focusable="false" aria-hidden="true"><use href="#pn-mark"/></svg>
       </span>
-      <span>
+      <div>
         <span class="footer__name">PrioNudge</span>
-        <span class="footer__by">Built by Izzaldin Samir</span>
-      </span>
+        <span class="footer__tagline">Local-first productivity for Windows.</span>
+      </div>
     </div>
     <nav class="footer__links" aria-label="Footer">
       <a href="mailto:support@prionudge.com">Support</a>
@@ -548,7 +530,7 @@
       <a href="https://github.com/IzzaldinSamir/prionudge-releases" target="_blank" rel="noopener">GitHub</a>
       <a href="https://github.com/IzzaldinSamir/prionudge-releases/releases" target="_blank" rel="noopener">Releases</a>
     </nav>
-    <p class="footer__copy">&copy; 2026 Izzaldin Samir</p>
+    <p class="footer__copy">&copy; 2026 <a href="https://ezzulddin.com/" class="footer__author-link" target="_blank" rel="noopener">Izzaldin Samir</a></p>
   </div>
 </footer>
 
