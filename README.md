@@ -70,7 +70,7 @@ Public support and privacy questions: `support@prionudge.com`.
 
 ## Download links
 
-The buttons ship with pinned `v0.1.16` asset URLs so they work with JavaScript
+The buttons ship with pinned `v0.1.17` asset URLs so they work with JavaScript
 disabled. On load, `script.js` asks the GitHub API for the latest release in
 `IzzaldinSamir/prionudge-releases`, finds the asset ending in `_x64-setup.exe`
 and the matching `.msi`, and rewrites the links and the on-page version label.
@@ -100,13 +100,8 @@ To change the version advertised as the fallback, update these places:
 - `geist-variable.woff2` is the font the desktop app itself uses; Geist is
   licensed under the SIL Open Font License 1.1.
 
-- PrioNudge is transitioning to a paid **Founder Early Access** license,
-  intended to launch at **€14.99 one-time** (perpetual license, up to three
-  activations, no subscription, no lifetime-updates promise). Checkout is not
-  live while Creem's store review is pending, so the current public **v0.1.16**
-  download remains available in the meantime. The upcoming licensed release
-  includes a 14-day trial; the currently published v0.1.16 build does not.
-- No Test-mode checkout is exposed publicly, and there is no purchase CTA or
-  `pay.prionudge.com` link on the site. `pay.prionudge.com` is intentionally not
-  configured by this repository; it will be set up after the Creem store is
-  switched to Live and custom checkout domains become available.
+- PrioNudge is launched under a paid **Founder Early Access** license at
+  **€14.99 one-time** (perpetual license for the purchased version, up to three
+  activations, no subscription, no lifetime-updates promise). Every download
+  includes a full 14-day local trial with no account required.
+- Checkout is powered by Creem as Merchant of Record via `pay.prionudge.com`.

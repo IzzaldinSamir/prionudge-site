@@ -8,7 +8,7 @@
 
   var RELEASES_REPO = "https://github.com/IzzaldinSamir/prionudge-releases";
   var LATEST_API = "https://api.github.com/repos/IzzaldinSamir/prionudge-releases/releases/latest";
-  var FALLBACK_VERSION = "0.1.16";
+  var FALLBACK_VERSION = "0.1.17";
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var finePointer = window.matchMedia("(pointer: fine)").matches;
@@ -192,7 +192,7 @@
 
   /* ---------------------------------------------------------
      5. Resolve the latest release so the download links keep
-        working after v0.1.16. Falls back to the pinned URLs.
+        working after v0.1.17. Falls back to the pinned URLs.
      --------------------------------------------------------- */
   function setDownload(kind, url) {
     if (!url) return;
@@ -240,7 +240,7 @@
         setVersion((release.tag_name || "").replace(/^v/i, "") || FALLBACK_VERSION);
       })
       .catch(function () {
-        /* Offline, rate-limited or blocked: the pinned v0.1.16 URLs stand. */
+        /* Offline, rate-limited or blocked: the pinned v0.1.17 URLs stand. */
       })
       .then(function () { window.clearTimeout(timer); });
   }
