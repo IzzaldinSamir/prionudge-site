@@ -84,7 +84,7 @@
       <h1 class="hero__title" data-reveal>Stop managing your task list.<br><span class="grad">Know what to do next.</span></h1>
 
       <p class="hero__lead" data-reveal>
-        PrioNudge combines tasks, priorities, time estimates, context and lightweight tracking
+        PrioNudge combines tasks, priorities, time estimates, context, and built-in activity tracking
         to reduce the friction of deciding what deserves your attention next.
       </p>
 
@@ -108,7 +108,7 @@
       </div>
 
       <p class="hero__note" data-reveal>
-        <span class="ver"><span data-version>v0.1.17</span> <span class="hero__release-tag">&middot; Activity tracker</span></span>
+        <span class="ver"><span data-version>v0.1.17</span> <span class="hero__release-tag">&middot; Integrated activity tracker</span></span>
         <span aria-hidden="true">&middot;</span> 14-day trial
         <span aria-hidden="true">&middot;</span> Local-first
         <span aria-hidden="true">&middot;</span> No account required
@@ -159,7 +159,7 @@
             <span class="principle__num" aria-hidden="true">02</span>
             <div class="principle__body">
               <h3>Work with time, not just checkboxes</h3>
-              <p>Estimates, focus sessions and a lightweight activity tracker make your real workload visible — not just your task count.</p>
+              <p>Estimates, focus sessions, and built-in activity tracking make your real workload visible — not just your task count.</p>
             </div>
           </article>
           <article class="principle">
@@ -180,13 +180,13 @@
   <section class="section section--features" aria-labelledby="features-title">
     <div class="container">
       <div class="section__head section__head--center" data-reveal>
-        <p class="section__eyebrow">Product story</p>
+        <p class="section__eyebrow">One app &middot; One workflow</p>
         <h2 class="section__title" id="features-title">The parts you&rsquo;ll actually use.</h2>
-        <p class="section__lead">Not a hundred features. Just the parts that remove a decision.</p>
+        <p class="section__lead">One connected workflow from deciding what deserves attention to seeing where your time actually went.</p>
       </div>
 
       <!-- Workflow rail: Decide -> Capture -> Do -> Track -->
-      <nav class="workflow-rail" data-reveal aria-label="Product workflow loop">
+      <nav class="workflow-rail" data-reveal aria-label="One connected workflow across four stages">
         <a class="workflow-step" href="#optimize">
           <span class="workflow-step__num">01</span>
           <div class="workflow-step__body">
@@ -201,7 +201,7 @@
           <span class="workflow-step__num">02</span>
           <div class="workflow-step__body">
             <span class="workflow-step__name">Capture</span>
-            <span class="workflow-step__meta"><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Space</kbd></span>
+            <span class="workflow-step__meta">Quick capture</span>
           </div>
         </a>
         <span class="workflow-rail__arrow" aria-hidden="true">
@@ -229,7 +229,7 @@
       <!-- Optimize -->
       <article class="feature feature--optimize" id="optimize" data-reveal>
         <div class="feature__copy">
-          <div class="feature__kicker">Dead-Time Optimizer</div>
+          <div class="feature__kicker">Stage 01 &middot; Dead-Time Optimizer</div>
           <h3>Optimize a spare window into a plan.</h3>
           <p>Tell PrioNudge how much time you have, where you are and how much energy you&rsquo;ve got. It ranks what fits and builds one plan you can start immediately.</p>
           <ul class="feature__list">
@@ -254,7 +254,7 @@
       <!-- Quick Capture -->
       <article class="feature feature--capture feature--reverse" id="capture" data-reveal>
         <div class="feature__copy">
-          <div class="feature__kicker">Quick Capture</div>
+          <div class="feature__kicker">Stage 02 &middot; Quick Capture</div>
           <h3>Type it once. PrioNudge parses the rest.</h3>
           <p>Press <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Space</kbd> from anywhere on Windows. Dates, priorities, recurrence and estimates are extracted so you can get back to work.</p>
           <ul class="feature__list">
@@ -279,7 +279,7 @@
       <!-- Focus -->
       <article class="feature feature--focus" id="focus" data-reveal>
         <div class="feature__copy">
-          <div class="feature__kicker">Focus mode</div>
+          <div class="feature__kicker">Stage 03 &middot; Focus mode</div>
           <h3>One task. One timer. Zero distractions.</h3>
           <p>Pick a duration, start the session and let everything else fade back. Focus mode keeps the current task in front of you until you&rsquo;re done.</p>
           <ul class="feature__list">
@@ -301,9 +301,9 @@
       <!-- Activity Tracker -->
       <article class="feature feature--tracker feature--reverse" id="tracker" data-reveal>
         <div class="feature__copy">
-          <div class="feature__kicker">Activity Tracker</div>
+          <div class="feature__kicker">Stage 04 &middot; Activity Tracker</div>
           <h3>Tasks tell you what you planned.<br>Tracker shows what you spent time on.</h3>
-          <p>A lightweight companion to your task list. Start one-click stopwatches for saved activities or record ad-hoc sessions as you work. Daily targets and a rolling 7-day overview keep your actual hours honest without turning into an administrative chore.</p>
+          <p>The final stage of the workflow closes the loop between planning and reality: task estimate &rarr; focus session &rarr; tracked actual time. Start one-click stopwatches for saved activities or record sessions as you work. Daily targets and a rolling 7-day overview keep your actual hours honest without turning into an administrative chore.</p>
           <ul class="feature__list">
             <li>Saved reusable activities with daily target goals and target-met indicators</li>
             <li>One-click timers, quick start popup (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd>), and manual session editing</li>
@@ -320,7 +320,7 @@
               <span>Planned vs. actual time</span>
             </span>
           </div>
-          <figcaption class="feature__caption">Activity Tracker combines daily targets, 7-day velocity, and live stopwatches alongside your task list.</figcaption>
+          <figcaption class="feature__caption">Activity Tracker connects daily targets, 7-day velocity, and live stopwatches directly to your planned tasks.</figcaption>
         </figure>
       </article>
 
@@ -514,6 +514,7 @@
         <span aria-hidden="true">&middot;</span> 14-day free trial
         <span aria-hidden="true">&middot;</span> <a href="https://github.com/IzzaldinSamir/prionudge-releases/releases/latest" target="_blank" rel="noopener">All releases</a>
       </p>
+      <!-- TODO: Add measured system requirements (RAM, CPU, disk) after running standardized performance benchmarks on Windows 10/11 hardware. Do not publish placeholder estimates. -->
     </div>
   </section>
 </main>
