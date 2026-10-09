@@ -70,7 +70,7 @@ Public support and privacy questions: `support@prionudge.com`.
 
 ## Download links
 
-The buttons ship with pinned `v0.1.18` asset URLs so they work with JavaScript
+The buttons ship with pinned `v0.1.19` asset URLs so they work with JavaScript
 disabled. On load, `script.js` asks the GitHub API for the latest release in
 `IzzaldinSamir/prionudge-releases`, finds the asset ending in `_x64-setup.exe`
 and the matching `.msi`, and rewrites the links and the on-page version label.
@@ -87,6 +87,7 @@ To change the version advertised as the fallback, update these places:
   `<span data-version>` elements
 - `index.html` — `softwareVersion` in the JSON-LD block
 - `script.js` — `FALLBACK_VERSION`
+- `privacy.html` and `terms.html` — header download links
 
 ## Notes
 
